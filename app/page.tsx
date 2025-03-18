@@ -133,12 +133,9 @@ export default function Home() {
             
             {/* Desktop menu */}
             <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Features</a>
-              <a href="#how-it-works" className="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">How It Works</a>
-              <a href="#faq" className="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">FAQ</a>
-              <button className="bg-indigo-600 text-white px-4 py-2 rounded-md font-medium hover:bg-indigo-700">
-                Connect Wallet
-              </button>
+              <span onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium cursor-pointer">Features</span>
+              <span onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium cursor-pointer">How It Works</span>
+              <span onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium cursor-pointer">FAQ</span>
             </div>
           </div>
         </div>
@@ -147,30 +144,33 @@ export default function Home() {
         {isMenuOpen && (
           <div className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
-              <a 
-                href="#features" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
+              <span 
+                onClick={() => {
+                  document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }} 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
               >
                 Features
-              </a>
-              <a 
-                href="#how-it-works" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
+              </span>
+              <span 
+                onClick={() => {
+                  document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }} 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
               >
                 How It Works
-              </a>
-              <a 
-                href="#faq" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
+              </span>
+              <span 
+                onClick={() => {
+                  document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }} 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
               >
                 FAQ
-              </a>
-              <button className="mt-1 block w-full text-left px-3 py-2 text-base font-medium bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
-                Connect Wallet
-              </button>
+              </span>
             </div>
           </div>
         )}
@@ -377,19 +377,13 @@ export default function Home() {
               <span className="block">Ready to experience the future of auctions?</span>
               <span className="block text-indigo-200 mt-1">Join our platform today.</span>
             </h2>
-            <div className="mt-8 flex flex-col sm:flex-row lg:mt-0 lg:flex-shrink-0">
-              <a
-                href="#"
+            <div className="mt-8 lg:mt-0">
+              <button
+                onClick={() => document.getElementById('email')?.focus()}
                 className="w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
               >
-                Get started
-              </a>
-              <a
-                href="#"
-                className="w-full mt-3 sm:mt-0 sm:ml-3 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 bg-opacity-60 hover:bg-opacity-70 sm:w-auto"
-              >
-                Learn more
-              </a>
+                Get early access
+              </button>
             </div>
           </div>
         </div>
@@ -398,44 +392,9 @@ export default function Home() {
       {/* Footer - Mobile Optimized */}
       <footer className="bg-gray-800">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
-              <ul className="mt-4 space-y-3 sm:space-y-4">
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">About</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Team</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Careers</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
-              <ul className="mt-4 space-y-3 sm:space-y-4">
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Documentation</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Guides</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">API Reference</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Status</a></li>
-              </ul>
-            </div>
-            <div className="mt-8 md:mt-0">
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-              <ul className="mt-4 space-y-3 sm:space-y-4">
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Privacy</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Terms</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Cookie Policy</a></li>
-              </ul>
-            </div>
-            <div className="mt-8 md:mt-0">
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
-              <ul className="mt-4 space-y-3 sm:space-y-4">
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Twitter</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">GitHub</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Discord</a></li>
-                <li><a href="#" className="text-sm sm:text-base text-gray-300 hover:text-white">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 sm:mt-12 border-t border-gray-700 pt-6 sm:pt-8">
+          
+          
+          <div className="mt-8 sm:mt-12  sm:pt-8">
             <p className="text-sm sm:text-base text-gray-400 text-center">
               &copy; 2025 VickreyChain. All rights reserved.
             </p>
